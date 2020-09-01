@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 """
 This module contains functions to create a graph of the averages of other graphs
 A graph is pair of lists of numbers, one list for the abscissas and another for the ordinates, 
@@ -52,6 +54,18 @@ def averages(graphs):
         return (abscissas, ordinates)
     except AssertionError as ae:
         print(ae)
+
+def showAveragesInGraph(averages):
+    """
+    Plots averages in a bar plot
+
+    Args:
+        averages (tuple): graf containing averages of other graphs
+    """
+    fig = plt.figure()
+    ax = fig.add_axes([0,0,1,1])
+    ax.bar(*averages)
+    plt.show()
 
 
 if __name__=='__main__':
